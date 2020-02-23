@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Projet de Syntèse</title>
+      <link rel="stylesheet" href="https://cdn.bokeh.org/bokeh/release/bokeh-1.4.0.min.css" type="text/css" />
+        <link rel="stylesheet" href="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-1.4.0.min.css" type="text/css" />
+        <link rel="stylesheet" href="https://cdn.bokeh.org/bokeh/release/bokeh-tables-1.4.0.min.css" type="text/css">
+
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-1.4.0.min.js"></script>
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-api-1.4.0.min.js"></script>
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-1.4.0.min.js"></script>
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-1.4.0.min.js"></script>
+        {{ the_script|safe }}
+      <style>
+        ul.percentage li {
+          display:inline-block;
+          padding-left: 120px;
+          padding-right: 120px;
+          padding-bottom: 20px;
+          padding-top: 5px;
+          font-size: 35px;
+          font-family: Verdana, sans-serif;
+          text-align: center;
+        }
+        input[type=text] {
+          border: 2px solid white;
+          border-radius: 8px;
+          width: 40%;
+          height: 10px;
+          background-color: #0B0022;
+          color: white;
+          margin: 8px 0;
+          font-size: 16px;
+          padding: 12px 20px;
+        }
+        input[type=button], input[type=submit], input[type=reset] {
+          background-color: white;
+          border: none;
+          color: #0B0022;
+          padding: 11px 18px;
+          text-decoration: none;
+          margin: 4px 2px;
+          cursor: pointer;
+          border-radius: 10px;
+          font-size: 16px;
+          width: 120px;
+        }
+       </style>
+  </head>
+  <body style="background-color: #0B0022">
+    <div align="center">
+        <form method="POST">
+            <input  type="text" name="brand" placeholder="Search for brands...">
+            <input type="submit" value="Search">
+        </form>
+    </div>
+
+    <div align="center">
+        <ul class="percentage">
+            <li style="color: #39DA00;">
+                <p style="color: #39DA00;">{{positive}}%</p>
+                Positive
+            </li>
+            <li style="color: #FDB229;">
+                <p style="color: #FDB229;">{{neutral}}%</p>
+                Neutral
+            </li>
+            <li style="color: #FF0445;">
+                <p style="color: #FF0445;">{{negative}}%</p>
+                Negative
+            </li>
+        </ul>
+    </div>
+
+    <div align="center">
+        {{ the_div|safe }}
+    </div>
+
+  </body>
+</html>
